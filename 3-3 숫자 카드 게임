@@ -1,0 +1,16 @@
+# n은 행, m은 열 
+n,m = map(int,input().split())
+arr = [] # 입력 받은 리스트 
+min_row =  [] # 각 행에서 가장 작은 값 
+
+# 행의 개수 만큼 입력 받는다 
+for _ in range(n): 
+  arr.append(list(map(int,input().split())))
+
+# 각 행에서 가장 작은 수를 뽑는다 
+for row in arr: 
+  min_row.append(min(row))
+
+print(max(min_row))
+  
+  
