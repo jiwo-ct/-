@@ -1,0 +1,20 @@
+# 입력 
+N = int(input())
+
+# 데이터 가공 
+temp = N 
+count = 0
+max_len = N // 5 # 3 
+arr = [] 
+min_count = float('inf')
+
+# 예외 : 4 5가 한번도 들어가지 않음 
+for j in range(max_len + 1): # 0,1,2,3 
+  N = temp - 5 * j # 5가 0번 들어갈 때부터 최대로 들어갈 수 있는만큼 
+  if (N % 3 == 0): # 5가 들어가고도 3으로 나누어 떨어지면 
+    count = j + N // 3 # 몫 만큼 카운팅 
+    min_count = min(count, min_count)
+  
+# 루프를 다 돌고도 카운트가 0으로 끝나면 -> -1을 출력 
+if min_count == float('inf') : print(-1)
+else : print(min_count)
