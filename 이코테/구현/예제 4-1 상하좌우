@@ -1,1 +1,28 @@
-for i in range
+# 입력 
+N = int(input()) # 공간의 크기를 나타내는 N이 주어짐 
+data = list(map(str,input().split())) # 여행가 A가 이동할 계획서 내용이 주어짐 
+
+# 데이터 가공 
+# map = [[i] * N for _ in range(N)] # 2차원 배열생성 
+x = 1 
+y = 1 
+
+for value in data: 
+  if (value == 'R'): 
+    y += 1
+    if (y > N): 
+      y -= 1
+  elif (value == 'L'): 
+    y -= 1 
+    if (y < 1):
+      y += 1
+  elif (value == 'U'): 
+    x -= 1 
+    if (x == 0):
+      x += 1
+  elif (value == 'D'): 
+    x += 1 
+    if (x > N):
+      x -= 1
+print(x,y)
+    
