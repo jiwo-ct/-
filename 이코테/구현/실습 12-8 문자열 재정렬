@@ -1,0 +1,14 @@
+n = list(map(str, input().strip())) 
+n = sorted(n)
+sum = 0 
+new = [] 
+
+# 반복문동안 0~9 사이의 값이면 sum 변수에 더하고 그 값을 삭제함 
+for i in n: 
+  if i.isdigit(): 
+    sum += int(i)
+  else: 
+    new.append(i)
+print(''.join(new)+str(sum))
+
+    
