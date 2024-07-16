@@ -1,0 +1,13 @@
+n = list(map(int, input().strip()))
+right = 0 
+left = 0
+for i in range(int(len(n)/2)): 
+  left += n[i]
+  right += n[-i-1]
+
+if (right == left): 
+  print("LUCKY")
+else : 
+  print("READY")
+
+  
