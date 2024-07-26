@@ -1,0 +1,15 @@
+# 테스트 코드 
+n,k = 17,4
+result = 0 
+
+while True: 
+  if n == 1: 
+    break 
+  # 만약 n이 k로 나누어 떨어지면 
+  if n % k == 0:  
+    n = n // k 
+    result += 1
+    continue
+  n -= 1 
+  result += 1 
+print(result)
