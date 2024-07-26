@@ -1,12 +1,33 @@
-# n은 행, m은 열 
-n,m = map(int,input().split())
+# 1번 
+n,m = map(int,input().split()) # O(1)
+array = [] 
+for _ in range(n): # O(n)
+  array.append(list(map(int, input().split()))) 
+  
+temp = []
+for i in range(len(array)): # O(n)
+  temp.append(min(array[i])) # 각 행에 대해 m번 반복 -> O(n)
+print(max(temp)) # O(n)
+
+# 2번  
+n,m = map(int,input().split()) 
+result = 0 
+
+for _ in range(n): 
+  array = list(map(int,input().split()))
+  temp = min(array)
+  result = max(result, temp)
+print(result)
+
+# 3번 
+n,m = map(int,input().split()) 
 
 result = 0
-
-for i in range(n):
+for i in range(n): 
   data = list(map(int,input().split()))
-  min_value = min(data)
+  min_value = 10001
+  for a in data: 
+    min_value = min(min_value,a)
   result = max(result, min_value)
-
 print(result)
-  
+    
