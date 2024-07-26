@@ -1,0 +1,17 @@
+n,m,k = map(int,input().split())
+value = list(map(int,input().split()))
+
+result = 0
+value.sort()
+
+while True: 
+  for i in range(k): 
+    if m == 0: 
+      break 
+    result += value[-1]
+    m -= 1
+  if m == 0: 
+    break 
+  result += value[-2]
+  m -= 1 
+print(result)
