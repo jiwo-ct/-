@@ -1,0 +1,16 @@
+def solution(food_times, k):
+    answer = 0
+    while True: 
+        if k == 0: 
+            break 
+        for j in range(len(food_times)): 
+            if k == 0: 
+                break 
+            if food_times[j] != 0: 
+                food_times[j] -= 1
+                k -= 1 
+                answer = j + 1 # 그 다음 인덱스 값을 출력 
+                if answer == 3: 
+                    answer = 1 
+    return answer
+
