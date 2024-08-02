@@ -1,0 +1,15 @@
+import sys 
+input = sys.stdin.readline
+
+n = int(input())
+data = {} 
+
+for _ in range(n): 
+  num = int(input()) 
+  if num in data: 
+    data[num] += 1
+  else:
+    data[num] = 1
+    
+result = sorted(data.items(), key=lambda x : (-x[1], x[0]))
+print(result[0][0])
