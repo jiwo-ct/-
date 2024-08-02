@@ -1,0 +1,23 @@
+import sys
+input = sys.stdin.readline
+
+n = int(input())  
+
+for _ in range(n): 
+  stack = [] 
+  command = input()
+  
+  for value in command: 
+    if value == '(': 
+      stack.append('(')
+    elif value == ')':
+      if len(stack) == 0: 
+        stack.append(')')
+        break 
+      else: 
+        stack.pop()
+        
+  if len(stack) != 0: 
+    print('NO')
+  else: 
+    print('YES')
