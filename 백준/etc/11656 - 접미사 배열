@@ -1,0 +1,15 @@
+import sys 
+input = sys.stdin.readline
+
+# 문자열을 하나 입력받고 
+s = input().strip()
+new_s = [] 
+# for문으로 문자열을 돌면서 하나씩 더한거를 새로운 리스트 저장 
+for i in range(len(s)): 
+  new_s.append(s[i:])
+  # 전체 문자열에서 하나씩 뺴는거 
+new_s.sort() 
+# 리스트를 sort 해서 출력 
+print('\n'.join(map(str, new_s)))
+
+-> 인덱싱 사용. 리스트를 문자열로 변환 
