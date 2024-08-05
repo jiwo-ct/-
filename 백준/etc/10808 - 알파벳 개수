@@ -1,0 +1,27 @@
+# 내가 작성한 코드 
+import sys 
+input = sys.stdin.readline
+
+s = input().strip()
+data = [0] * 26
+
+for i in s: 
+  data[ord(i) - 97] += 1
+
+for i in data: 
+  print(i, end=" ")
+
+# 더 좋은 아이디어 
+n = input()
+lst = [0]*26
+
+for i in range(n):
+	lst[ord(i)-97] = n.count(i) # i를 모두 카운트해서 한번에 저장 
+for i in lst:
+	print(i, end=" ")
+
+ ---
+ 배운점 
+ sys.stdin.readline()은 개행문자까지 읽어오기 때문에 strip()을 해주어야 한다 
+ ord()함수는 문자열을 숫자로 바꾸어주는 함수 
+ count()함수는 가지고 있는 문자열의 개수를 세어줌 
