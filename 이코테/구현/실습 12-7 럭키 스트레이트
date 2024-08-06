@@ -11,3 +11,21 @@ else :
   print("READY")
 
   
+---
+
+2) 
+n = list(map(int,input()))
+ 
+length = len(n)
+ 
+mid = length//2
+ 
+left_sum = sum(n[0:mid])
+right_sum = sum(n[mid:])
+ 
+if left_sum == right_sum:
+  print('LUCKY')
+else:
+  print('READY')
+
+# [::-1] 이렇게 사용하면 전체 리스트를 역순으로 추출한다. 완전 유용함
