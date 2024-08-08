@@ -1,0 +1,24 @@
+1) 최대공약수를 반복문으로 통해서 구한후 입력받은 두값을 곱한값을 최대공약수로 나눔 
+def gcd(a,b):
+  # a가 b보다 크면 
+  if (a > b): 
+    # a에 작은 값을 넣어줌 
+    a,b = b,a
+  for i in range(a, 0, -1): 
+    if a % i == 0 and b % i == 0: 
+     break 
+  return i 
+
+2) math 라이브러리의 gcd 함수를 이용하는 방법 
+import math 
+a,b = map(int, input().split())
+gcd = math.gcd(a,b)
+lcm = a * b // gcd 
+
+3) 유클리드 알고리즘을 통해 최대공약수를 구하는 방법 
+a,b = map(int,input().split())
+aa,bb = a,b 
+# 결과적으로 b에 최대공약수가 들어감 
+while a % b != 0: 
+  a,b = b, a % b 
+lcm = a * b // b
