@@ -1,0 +1,17 @@
+# 모든 학생 출석번호 리스트 
+data = list(range(1,31))
+submitted = [] 
+
+for i in range(28): 
+  n = int(input())
+  submitted.append(n)
+  
+no_submit = sorted(set(data) - set(submitted))
+
+print(no_submit[0])
+print(no_submit[1])
+
+--> 배운점 
+
+1) data를 선언할 때 data[1,2,3..] 이렇게 하나하나 다 넣을 필요없이 data = list(range(1,31)) 이렇게 한번에 넣을 수 있음  
+2) 리스트를 세트로 만들어 차집합 연산을 해줄 수 있음
