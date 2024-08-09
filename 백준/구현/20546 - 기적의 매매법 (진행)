@@ -1,0 +1,45 @@
+# 입력 
+# 1) 주어진 현금 
+cash = int(input())
+s_cash, j_cash = cash, cash 
+# 2) 주가 
+data = list(map(int,input().split()))
+
+# 준현이의 매수, 매도 전략 
+j_stock = 0 # 현재 보유하고 있는 주식 수는 0 
+for price in data:
+  # 내가 가지고 있는 현금이 주식의 가격보다 크면 
+  if j_cash >= price: 
+    # 최대 수량만큼 구입 
+    j_possible_buy = cash // price # 매번 초기화 
+    j_spend_money = j_possible_buy * price 
+    j_stock += j_possible_buy
+    j_cash -= j_spend_money
+  # 돈이 부족해서 매수 불가능 
+j_money = cash + (data[-1] * j_stock) 
+  
+
+
+
+# 1월 14일의 자산은 (현금 + 1월 14일의 주가 x 주식 수)
+
+# 성민의의 매수, 매도 전략 
+s_stock = 0 # 현재 보유하고 있는 주식 수는 0 
+for i in range(len(data) // 3 + 1):
+  # 소유한 주식의 가격이 3일째 상승한다면 전량 매도 
+    # 전일과 오늘의 주가가 동일하다면 가격이 상승한 것이 아님 
+  if s_cash >= data[i]: # 구매가능하다는 전제 
+  # 3일 연속 가격이 하락하는 주식은 다음날 가격이 상승. -> 전량 매수 
+     # 전일과 오늘의 주가가 동일하다면 가격이 상승한 것이 아님 
+  if data[i] > data[i+1] > data[i+2]: 
+    if s_cash >= data[i+2]: 
+      # 최대 수량만큼 구입 
+      s_possible_buy = s_cash // data[i+2] # 매번 초기화 
+      s_spend_money = s_possible_buy * data[i+2] 
+      s_stock += s_possible_buy
+      s_cash -= s_spend_money
+
+# 출력 
+  # 1) 주현이 자산이 더 크다면 "BNP"
+  # 2) 성민이 자산이 더 크다면 "TIMING"
+  # 3) 동일하다면 "SAMESAME"
